@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    width: 100vw;
+    color: white;
+    text-shadow:  1px 1px #beaeae;
+}
+
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    border-bottom: 1px dotted white;
+}
+
+h1 {
+    font-size: 2.2rem;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.nav-container {
+    width: 100%;
+    background-color:  #e0ad9987; /*#E0B799;*/
+    padding: 0.8em;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+li {
+    margin: 0 auto;
+}
+
+@media (min-width:700px) {
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-container {
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    ul {
+        display: flex;
+        gap: 15px;
+    }
+
+}
