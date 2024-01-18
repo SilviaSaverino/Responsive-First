@@ -1,7 +1,6 @@
 import {postArray} from "./posts.js"
 
 const singlePostHtml = postArray.map(function(post){
-    console.log(post)
     return `
     <div class="posts">
         <img class="post-img" src="${post.image}">
@@ -11,7 +10,7 @@ const singlePostHtml = postArray.map(function(post){
         </div>
     </div>
 `
-})
+}).join('')
 
 document.getElementById("container").innerHTML = singlePostHtml
 
