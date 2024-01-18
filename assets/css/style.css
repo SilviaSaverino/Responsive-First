@@ -8,6 +8,18 @@ body, h1 {
     margin: 0;
 }
 
+.nav-container {
+    margin-bottom: 2em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+main {
+    margin-top: 8em;
+}
+
 header, footer, a:visited  {
     width: 100vw;
     color: white;
