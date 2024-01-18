@@ -162,7 +162,7 @@ ul,.hero-container,.container {
     }
 }
 
-@media (min-width: 700px) and (max-width: 1150px) {
+@media (min-width: 700px) and (max-width: 1250px) {
     .hero-container {
         padding: 5em;
     }
@@ -187,7 +187,7 @@ ul,.hero-container,.container {
     }
 
     .post-img {
-        width: 40%;
+        min-width: 40%;
         object-fit: contain;
         padding: 2em;
     }
