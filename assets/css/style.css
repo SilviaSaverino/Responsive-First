@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body, h1 {
+body, h1, h4 {
     margin: 0;
 }
 
@@ -36,11 +36,11 @@ a:hover {
 }
 
 h1 {
-    font-size: 2.2rem;
+    font-size: 2.4rem; /*2.2rem*/
     text-transform: capitalize;
 }
 
-p {
+p, h4, span {
     line-height: 1.5;
     font-size: 1.2rem;
 }
@@ -55,7 +55,7 @@ h3 {
     padding: 0.8em;
 }
 
-ul, h3 {
+ul, h3, h4 {
     margin: 0.3em;
 }
 
@@ -69,7 +69,7 @@ li {
     margin: 0 auto;
 }
 
-ul,.hero-container,.container {
+ul,.hero-container,.container, .bio-container  {
     display: flex;
 }
 
@@ -77,21 +77,29 @@ ul,.hero-container,.container {
     text-align: center;
 }
 
-.hero-img {
-    max-height: 350px;
+.hero-img, .avatar {
+    /* max-height: 350px; */
+    max-height: 70vh;
     object-fit: contain;
 }
 
-.container, .hero-container  {
+.avatar {
+    border-radius: 50%;
+    border: 3px solid #E8CBAE; 
+    padding: 0.6em;
+    margin-bottom: 2em;
+}
+
+.container, .hero-container, .bio-container {
     flex-direction: column;
 }
 
-.posts, .hero-container {
+.posts, .hero-container, .bio-container {
     padding: 1em;
     margin-top: 0.2em;
 }
 
-.post-info h3, .post-info p {
+.post-info h3, .post-info p, .bio-container h3, .bio-container p  {
     margin: 0.3em 0;
     text-align: left; 
 }
@@ -101,8 +109,8 @@ ul,.hero-container,.container {
     text-shadow: 1px 1px #9b9b9c;
 }
 
-.post-info p {
-    font-size: 1rem;
+.post-info p, .bio-container p{
+    font-size: 1.1rem;
 }
 
 .post-img {
@@ -110,6 +118,10 @@ ul,.hero-container,.container {
     border-radius: 2%;
     max-height: 35vh;
     object-fit: cover;
+}
+
+footer {
+    margin-top: 1.5em;
 }
 
 @media (min-width:700px) {
@@ -142,10 +154,6 @@ ul,.hero-container,.container {
 
     .hero-container {
         flex-direction: row-reverse;
-    }
-
-    .hero-img {
-        max-height: 55vh;
     }
 
     .intro, .posts {
@@ -201,7 +209,8 @@ ul,.hero-container,.container {
     .post-img {
         min-width: 40%;
         object-fit: contain;
-        padding: 2em;
+        padding: 0 1em;
+        margin: 2em 0;
     }
 
     .post-info p, .post-info h3, .posts {
