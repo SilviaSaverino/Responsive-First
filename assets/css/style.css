@@ -309,8 +309,8 @@ footer {
         max-width: 50%;
     }
 
-    .modal h3 {
-        text-align: center;
+    .modal content {
+        text-align: left;
         margin-top: 1em;
     }
 
@@ -320,7 +320,7 @@ footer {
     }
 }
 
-@media (min-width: 700px) and (max-width: 1250px) {
+@media (min-width: 700px) and (max-width: 1550px) {
     .hero-container {
         padding: 5em;
     }
