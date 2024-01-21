@@ -1,5 +1,7 @@
 # Responsive First
 
+Check out the project [Live Site](https://silviasaverino.github.io/Responsive-First/)
+
 The CSS employs responsive design techniques, ensuring that the content is well-presented and easily readable on various devices. Media queries are strategically used to modify the layout, font sizes, and spacing, providing an optimal viewing experience from mobile devices to desktop screens.
 
 ## The project's CSS utilizes a mobile-first approach, employing the following key features:
