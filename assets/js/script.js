@@ -40,18 +40,8 @@ function renderPosts() {
     const postId = e.currentTarget.id
     // Find the selected post in postArray based on the clicked id
     const selectedPost = postArray.find(post => post.id.toString() === postId)
-    console.log(selectedPost)
-    // renderClickedPostContent(postId)
     renderPostModal(selectedPost)
   }
-
-//   function renderClickedPostContent(postId){
-//     const postContents = document.querySelectorAll('.post-content');
-//     postContents.forEach(content => content.classList.add("hide"));
-
-//     const clickedPostContent = document.getElementById(`${postId}`).querySelector('.post-content');
-//     clickedPostContent.classList.remove("hide");
-// }
 
 function renderPostModal(selectedPost) {
     // Create and show a modal
@@ -60,7 +50,7 @@ function renderPostModal(selectedPost) {
     modal.innerHTML = `
         <div class="modal">
             <button class="modal-close-btn" id="modal-close-btn">X</button>
-            <img src="${selectedPost.image}" alt="${selectedPost.title}" class="post-img ">
+            <img src="${selectedPost.image}" alt="${selectedPost.title}" class="post-img modal-img">
             <div class=""modal-content">
                 <h3>${selectedPost.title}</h3>
                 <p>${selectedPost.content}</p>
