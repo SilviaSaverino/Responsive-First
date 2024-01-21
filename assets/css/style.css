@@ -92,9 +92,7 @@ footer {
     text-align: center;
 }
 
-.hero-img,
-.avatar {
-    /* max-height: 350px; */
+.hero-img {
     max-height: 70vh;
     object-fit: contain;
 }
@@ -102,8 +100,9 @@ footer {
 .avatar {
     border-radius: 50%;
     border: 3px solid #E8CBAE;
-    padding: 0.6em;
-    margin-bottom: 2em;
+    margin: 0 auto;
+    display: block;
+    max-width: 90vw;
 }
 
 .container,
@@ -152,12 +151,17 @@ button {
     padding: 0.5em;
     width: 95%;
     margin: 0 auto;
+    display: block;
     border: 2px solid #E8CBAE;
     border-radius: 8px;
 }
 
 button:hover {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hide {
+    display: none;
 }
 
 footer {
@@ -237,7 +241,7 @@ footer {
     }
     
     .blogging {
-    max-width: 80%;
+    max-width: 81%;
     margin: 0px auto;
     }
 
@@ -260,6 +264,7 @@ footer {
         text-align: center;
         padding: 0 1.5em;
     }
+    
 }
 
 @media (min-width: 700px) and (max-width: 1250px) {
@@ -307,5 +312,15 @@ footer {
         margin: 0.5em auto;
 
     }
+
+    .blogging article {
+        margin: 3em 0;
+    }
+
+    .bio p {
+        margin-right: 1em;
+    }
+
+   
 
 }

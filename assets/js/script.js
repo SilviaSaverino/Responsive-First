@@ -27,5 +27,6 @@ if (currentPage === '/about.html') {
 
 revealPostBtn.addEventListener("click", function() {
     renderPosts()
+    revealPostBtn.classList.add("hide")
 })
 
