@@ -25,7 +25,6 @@ function renderPosts() {
   
   if (currentPage === '/about.html') {
     document.getElementById("container").innerHTML = ''
-    console.log('this is the about page')
   } else {
     renderPosts()
   }
