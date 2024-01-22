@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+.unclickable-posts {
+    pointer-events: none;
+}
+
 body,
 h1,
 h4 {
@@ -200,12 +204,9 @@ footer {
     color: #212529;
     z-index: 1;
     align-items: center;
-    padding: 1em;
+    padding: 1.5em;
 }
 
-.modal-content {
-    margin: 0 auto;
-}
 
 .modal-img {
     margin-bottom: 0.8em;
@@ -379,7 +380,8 @@ footer {
     }
 
     .modal img {
-        min-width: 100%;
+        min-width: 70%;
+        object-fit: cover;
     }
 
 

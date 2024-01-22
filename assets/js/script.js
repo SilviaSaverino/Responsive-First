@@ -43,20 +43,21 @@ function renderPosts() {
   }
 
 function renderPostModal(selectedPost) {
+    makePostsUnclickable()
     // Create and show a modal
-    const modal = document.createElement('div');
-    modal.classList.add('modal');
+    const modal = document.createElement('div')
+    modal.classList.add('modal')
     modal.innerHTML = `
         <div class="modal">
             <button class="modal-close-btn" id="modal-close-btn">X</button>
             <img src="${selectedPost.image}" alt="${selectedPost.title}" class="post-img modal-img">
-            <div class=""modal-content">
+            <div class="modal-content">
                 <h3>${selectedPost.title}</h3>
                 <p>${selectedPost.content}</p>
             </div>
         </div>
     `
-    document.body.appendChild(modal);
+    document.body.appendChild(modal)
 
     const modalCloseBtn = document.getElementById("modal-close-btn")
     modalCloseBtn.addEventListener("click", function(){
@@ -64,7 +65,17 @@ function renderPostModal(selectedPost) {
 })
 }
 
-function closeModal(modal){
-    document.body.removeChild(modal)
+function makePostsUnclickable(){
+    const posts = document.querySelectorAll('.posts');
+    posts.forEach(post => post.classList.add('unclickable-posts'));
 }
- 
+
+function closeModal(modal){
+  document.body.removeChild(modal)
+  makePostsClickableAgain()
+}
+
+function makePostsClickableAgain(){
+  const posts = document.querySelectorAll('.posts');
+  posts.forEach(post => post.classList.remove('unclickable-posts'));
+}
