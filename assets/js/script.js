@@ -15,9 +15,7 @@ function renderPosts() {
         </div>
       `
   }).join('')
-
   document.getElementById("container").innerHTML = singlePostHtml
-
   //Assign click event listeners to each post for handling post clicks
   document.querySelectorAll('.posts').forEach(post => post.addEventListener('click', handlePostClick))
 }
@@ -28,10 +26,7 @@ if (currentPage.includes('about.html')) {
   renderPosts()
 }
 
-revealPostBtn.addEventListener("click", function () {
-  renderPosts()
-  revealPostBtn.classList.add("hide")
-});
+revealPostBtn.addEventListener("click", () => { renderPosts(); revealPostBtn.classList.add("hide") })
 
 function handlePostClick(e) {
   // Get the id of the clicked post
