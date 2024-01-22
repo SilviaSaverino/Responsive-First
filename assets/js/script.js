@@ -23,7 +23,7 @@ function renderPosts() {
     posts.forEach(post => post.addEventListener('click', handlePostClick))
   }
   
-  if (currentPage === 'about.html') {
+  if (currentPage.includes('about.html')) {
     document.getElementById("container").innerHTML = ''
   } else {
     renderPosts()
