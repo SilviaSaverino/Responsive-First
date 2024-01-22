@@ -1,10 +1,10 @@
-import {postArray} from "./posts.js"
+import { postArray } from "./posts.js"
 const revealPostBtn = document.getElementById("reveal-post-btn")
 var currentPage = window.location.pathname
 
 function renderPosts() {
-    const singlePostHtml = postArray.map(function(post) {
-      return `
+  const singlePostHtml = postArray.map(function (post) {
+    return `
         <div class="posts" id="${post.id}">
           <img class="post-img" src="${post.image}">
           <div class="post-info">
@@ -14,40 +14,39 @@ function renderPosts() {
           </div>
         </div>
       `
-    }).join('')
-  
-    document.getElementById("container").innerHTML = singlePostHtml
+  }).join('')
 
-    //Assign click event listeners to each post for handling post clicks
-    const posts = document.querySelectorAll('.posts')
-    posts.forEach(post => post.addEventListener('click', handlePostClick))
-  }
-  
-  if (currentPage.includes('about.html')) {
-    document.getElementById("container").innerHTML = ''
-  } else {
-    renderPosts()
-  }
-  
-  revealPostBtn.addEventListener("click", function() {
-    renderPosts()
-    revealPostBtn.classList.add("hide")
-  });
-  
-  function handlePostClick(e) {
-    // Get the id of the clicked post
-    const postId = e.currentTarget.id
-    // Find the selected post in postArray based on the clicked id
-    const selectedPost = postArray.find(post => post.id.toString() === postId)
-    renderPostModal(selectedPost)
-  }
+  document.getElementById("container").innerHTML = singlePostHtml
+
+  //Assign click event listeners to each post for handling post clicks
+  document.querySelectorAll('.posts').forEach(post => post.addEventListener('click', handlePostClick))
+}
+
+if (currentPage.includes('about.html')) {
+  document.getElementById("container").innerHTML = ''
+} else {
+  renderPosts()
+}
+
+revealPostBtn.addEventListener("click", function () {
+  renderPosts()
+  revealPostBtn.classList.add("hide")
+});
+
+function handlePostClick(e) {
+  // Get the id of the clicked post
+  const postId = e.currentTarget.id
+  // Find the selected post in postArray based on the clicked id
+  const selectedPost = postArray.find(post => post.id.toString() === postId)
+  renderPostModal(selectedPost)
+}
 
 function renderPostModal(selectedPost) {
-    makePostsUnclickable()
-    // Create and show a modal
-    const modal = document.createElement('div')
-    modal.classList.add('modal')
-    modal.innerHTML = `
+  makePostsUnclickable()
+  // Create and show a modal
+  const modal = document.createElement('div')
+  modal.classList.add('modal')
+  modal.innerHTML = `
         <div class="modal">
             <button class="modal-close-btn" id="modal-close-btn">X</button>
             <img src="${selectedPost.image}" alt="${selectedPost.title}" class="post-img modal-img">
@@ -57,25 +56,20 @@ function renderPostModal(selectedPost) {
             </div>
         </div>
     `
-    document.body.appendChild(modal)
+  document.body.appendChild(modal)
 
-    const modalCloseBtn = document.getElementById("modal-close-btn")
-    modalCloseBtn.addEventListener("click", function(){
-    closeModal(modal)
-})
+  document.getElementById("modal-close-btn").addEventListener("click", () => closeModal(modal))
 }
 
-function makePostsUnclickable(){
-    const posts = document.querySelectorAll('.posts');
-    posts.forEach(post => post.classList.add('unclickable-posts'));
+function makePostsUnclickable() {
+  document.querySelectorAll('.posts').forEach(post => post.classList.add('unclickable-posts'))
 }
 
-function closeModal(modal){
+function closeModal(modal) {
   document.body.removeChild(modal)
   makePostsClickableAgain()
 }
 
-function makePostsClickableAgain(){
-  const posts = document.querySelectorAll('.posts');
-  posts.forEach(post => post.classList.remove('unclickable-posts'));
+function makePostsClickableAgain() {
+  document.querySelectorAll('.posts').forEach(post => post.classList.remove('unclickable-posts'))
 }
